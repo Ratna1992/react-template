@@ -8,6 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Software installations 
 npm install
+
 npm install --save @types/react-router-dom
 
 ## Available Scripts
