@@ -1,11 +1,13 @@
+## create the project in local
+
+npx create-react-app react-template --template typescript
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Software installations 
-
-npx create-react-app react-template --template typescript
-
+npm install
 npm install --save @types/react-router-dom
 
 ## Available Scripts
