@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Software installations 
 
+npx create-react-app react-template --template typescript
+
 npm install --save @types/react-router-dom
 
 ## Available Scripts
