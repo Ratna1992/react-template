@@ -5,6 +5,7 @@ import { Alert } from './components/Alert';
 import { Welcome } from './components/Welcome';
 import { AlphaList } from './components/AlphaList';
 import { UseStateHook } from './hooks/UseStateHook';
+import { UseEffectHook } from './hooks/UseEffectHook';
 
 function App() {
   const isLoggedIn:boolean=false
@@ -24,6 +25,8 @@ function App() {
       <h1>React Hooks</h1>
       <h2>useState()</h2>
       <UseStateHook/>
+      <h2>useEffect()</h2>
+      <UseEffectHook/>
     </div>
   );
 }
