@@ -6,10 +6,13 @@ import { Welcome } from './components/Welcome';
 import { AlphaList } from './components/AlphaList';
 import { UseStateHook } from './hooks/UseStateHook';
 import { UseEffectHook } from './hooks/UseEffectHook';
+import { DepartmentProvider } from './hooks/DepartmentContext';
+import { Employee } from './hooks/Employee';
 
 function App() {
   const isLoggedIn:boolean=false
   const alphalist = ['a','b','c','d','e','f']
+  const departmentData = { id: 1, name: 'Engineering' };
   return (
     <div className="App">
       <h1>Components & Props in React</h1>
@@ -27,6 +30,10 @@ function App() {
       <UseStateHook/>
       <h2>useEffect()</h2>
       <UseEffectHook/>
+      <h2>useContext()</h2>
+      <DepartmentProvider department={departmentData}>
+        <Employee/>
+      </DepartmentProvider>
     </div>
   );
 }
