@@ -11,6 +11,12 @@ npm install
 
 npm install --save @types/react-router-dom
 
+npm install @mui/material @emotion/react @emotion/styled
+
+npm install --save-dev @mightymeld/runtime
+
+npm install --save-dev customize-cra react-app-rewired
+
 ## Available Scripts
 
 In the project directory, you can run:
