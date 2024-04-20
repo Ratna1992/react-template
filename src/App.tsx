@@ -1,11 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Greeting } from './components/Greetings';
 import Counter from './classes/Counter';
 import { Alert } from './components/Alert';
+import { Welcome } from './components/Welcome';
 
 function App() {
+  const isLoggedIn:boolean=false
   return (
     <div className="App">
       <h1>Components & Props in React</h1>
@@ -14,6 +14,8 @@ function App() {
       <Counter/>
       <h1>Handling Events in React</h1>
       <Alert msg='Warning! Shoot out Happening'/>
+      <h1>Conditional Rendering</h1>
+      <Welcome isLoggedIn={isLoggedIn}/>
     </div>
   );
 }
