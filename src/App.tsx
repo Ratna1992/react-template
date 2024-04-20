@@ -8,11 +8,13 @@ import { UseStateHook } from './hooks/UseStateHook';
 import { UseEffectHook } from './hooks/UseEffectHook';
 import { DepartmentProvider } from './hooks/DepartmentContext';
 import { Employee } from './hooks/Employee';
+import { UseRefHook } from './hooks/UseRefHook';
 
 function App() {
   const isLoggedIn:boolean=false
   const alphalist = ['a','b','c','d','e','f']
   const departmentData = { id: 1, name: 'Engineering' };
+  const name:string = 'Ratna'
   return (
     <div className="App">
       <h1>Components & Props in React</h1>
@@ -34,6 +36,8 @@ function App() {
       <DepartmentProvider department={departmentData}>
         <Employee/>
       </DepartmentProvider>
+      <h2>useRef()</h2>
+      <UseRefHook initialName={name}/>
     </div>
   );
 }
