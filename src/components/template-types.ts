@@ -5,3 +5,8 @@ export type GreetingProps = {
 export type StatusProps = {
     isLoggedIn:boolean
 }
+
+export type ListProps={
+
+    list:string[]
+}
