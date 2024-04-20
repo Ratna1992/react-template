@@ -1,5 +1,5 @@
 import { GreetingProps } from "./template-types";
 
 export const Greeting = (props:GreetingProps) => {
-    return <h1>Hello Ratna, {props.msg}!</h1>;
+    return <h3>Hello Ratna, {props.msg}!</h3>;
   };
