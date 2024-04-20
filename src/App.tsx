@@ -4,6 +4,7 @@ import Counter from './classes/Counter';
 import { Alert } from './components/Alert';
 import { Welcome } from './components/Welcome';
 import { AlphaList } from './components/AlphaList';
+import { UseStateHook } from './hooks/UseStateHook';
 
 function App() {
   const isLoggedIn:boolean=false
@@ -20,6 +21,9 @@ function App() {
       <Welcome isLoggedIn={isLoggedIn}/>
       <h1>Lists and Keys</h1>
       <AlphaList list={alphalist}/>
+      <h1>React Hooks</h1>
+      <h2>useState()</h2>
+      <UseStateHook/>
     </div>
   );
 }
