@@ -16,6 +16,10 @@ import RegistrationForm from './forms/RegistrationForm';
 import FormValidation from './forms/FormValidation';
 import Todos from './apis/Todos';
 import { UseFetchAPITodos } from './apis/UseFetchAPITodos';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './routing/Home';
+import About from './routing/About';
+import Contact from './routing/Contact';
 
 
 function App() {
@@ -61,6 +65,16 @@ function App() {
       <Todos/>
       <h2>Todos Fetch with FETCH()</h2>
       <UseFetchAPITodos/>
+      <h1>React Routing</h1>
+      <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Router>
+   
+      
     </div>
   );
 }
