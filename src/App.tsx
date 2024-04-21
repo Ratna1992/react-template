@@ -13,6 +13,7 @@ import { UsereducerHook } from './hooks/UsereducerHook';
 import UseCallBackHook from './hooks/UseCallBackHook';
 import UseMeomoResult from './hooks/UseMemoResult';
 import RegistrationForm from './forms/RegistrationForm';
+import FormValidation from './forms/FormValidation';
 
 
 function App() {
@@ -51,6 +52,8 @@ function App() {
       <UseMeomoResult/>
       <h1>React Forms</h1>
       <RegistrationForm />
+      <h1>React Form Validation</h1>
+      <FormValidation/>
     </div>
   );
 }
