@@ -9,6 +9,8 @@ import { UseEffectHook } from './hooks/UseEffectHook';
 import { DepartmentProvider } from './hooks/DepartmentContext';
 import { Employee } from './hooks/Employee';
 import { UseRefHook } from './hooks/UseRefHook';
+import { UsereducerHook } from './hooks/UsereducerHook';
+
 
 function App() {
   const isLoggedIn:boolean=false
@@ -38,6 +40,8 @@ function App() {
       </DepartmentProvider>
       <h2>useRef()</h2>
       <UseRefHook initialName={name}/>
+      <h2>useReducer()</h2>
+      <UsereducerHook/>
     </div>
   );
 }
