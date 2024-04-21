@@ -12,6 +12,8 @@ import { UseRefHook } from './hooks/UseRefHook';
 import { UsereducerHook } from './hooks/UsereducerHook';
 import UseCallBackHook from './hooks/UseCallBackHook';
 import UseMeomoResult from './hooks/UseMemoResult';
+import RegistrationForm from './forms/RegistrationForm';
+
 
 function App() {
   const isLoggedIn:boolean=false
@@ -47,6 +49,8 @@ function App() {
       <UseCallBackHook/>
       <h2>useMemoback()</h2>
       <UseMeomoResult/>
+      <h1>React Forms</h1>
+      <RegistrationForm />
     </div>
   );
 }
