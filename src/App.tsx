@@ -11,6 +11,7 @@ import { Employee } from './hooks/Employee';
 import { UseRefHook } from './hooks/UseRefHook';
 import { UsereducerHook } from './hooks/UsereducerHook';
 import UseCallBackHook from './hooks/UseCallBackHook';
+import UseMeomoResult from './hooks/UseMemoResult';
 
 function App() {
   const isLoggedIn:boolean=false
@@ -44,6 +45,8 @@ function App() {
       <UsereducerHook/>
       <h2>useCallback()</h2>
       <UseCallBackHook/>
+      <h2>useMemoback()</h2>
+      <UseMeomoResult/>
     </div>
   );
 }
