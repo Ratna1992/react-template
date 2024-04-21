@@ -14,6 +14,8 @@ import UseCallBackHook from './hooks/UseCallBackHook';
 import UseMeomoResult from './hooks/UseMemoResult';
 import RegistrationForm from './forms/RegistrationForm';
 import FormValidation from './forms/FormValidation';
+import Todos from './apis/Todos';
+import { UseFetchAPITodos } from './apis/UseFetchAPITodos';
 
 
 function App() {
@@ -54,6 +56,11 @@ function App() {
       <RegistrationForm />
       <h1>React Form Validation</h1>
       <FormValidation/>
+      <h1>React Integration with APIS</h1>
+      <h2>Todos Fetch with AXIOS</h2>
+      <Todos/>
+      <h2>Todos Fetch with FETCH()</h2>
+      <UseFetchAPITodos/>
     </div>
   );
 }
