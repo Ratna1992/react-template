@@ -14,7 +14,7 @@ const Header: React.FC = () => {
         <Button color="inherit" component={RouterLink} to="/hooks">Hooks</Button>
         <Button color="inherit" component={RouterLink} to="/forms">Forms</Button>
         <Button color="inherit" component={RouterLink} to="/api">API</Button>
-        
+        <Button color="inherit" component={RouterLink} to="/cart">CART</Button>
       </Toolbar>
     </AppBar>
   );
