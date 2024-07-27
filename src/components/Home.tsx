@@ -1,8 +1,10 @@
 // Home.tsx
 import React from 'react';
-
+import Welcome from './Welcome'
 const Home: React.FC = () => {
-  return <h2>Home</h2>;
+  return <>
+    <Welcome isLoggedIn={true} />
+  </>;
 };
 
 export default Home;
