@@ -1,9 +1,9 @@
 
 import React from 'react';
 import Counter from '../classes/Counter';
-import { Alert } from './Alert';
-import { AlphaList } from './AlphaList';
-import { Greeting } from './Greetings';
+import { Alert } from '../props/Alert';
+import { AlphaList } from '../props/AlphaList';
+import { Greeting } from '../props/Greetings';
 
 
 const Props: React.FC = () => {
