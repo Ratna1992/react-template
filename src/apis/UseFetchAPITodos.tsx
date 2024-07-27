@@ -35,7 +35,7 @@ export const UseFetchAPITodos: React.FC = () => {
 
   return (
     <div>
-      <h1>Todos</h1>
+      <h2>Todos</h2>
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>{todo.title}</li>
