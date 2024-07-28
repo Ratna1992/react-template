@@ -1,20 +1,24 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { RootState } from '../redux/store';
-import { Container,Button } from '@mui/material';
-import PaginatedTable from './PaginatedTable';
-import { Link } from 'react-router-dom';
+// src/pages/Offers.tsx
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState, AppDispatch } from '../redux/store';
+import { fetchOffers } from '../redux/offersSlice';
+import OffersPaginatedTable from './OffersPaginatedTable';
+
 const Offers: React.FC = () => {
-  const products = useSelector((state: RootState) => state.products.products);
+  const dispatch = useDispatch<AppDispatch>();
+  const offers = useSelector((state: RootState) => state.offers.items);
+  const offerStatus = useSelector((state: RootState) => state.offers.status);
+
+  useEffect(() => {
+    if (offerStatus === 'idle') {
+      dispatch(fetchOffers());
+    }
+  }, [offerStatus, dispatch]);
 
   return (
     <div>
-      <Container>
-        <PaginatedTable rows={products} title='Offers'></PaginatedTable>
-        <Button component={Link} to="/cart" variant="contained" color="primary">
-        Go to Products
-      </Button>
-      </Container>
+      <OffersPaginatedTable rows={offers} title='Offers' />
     </div>
   );
 };

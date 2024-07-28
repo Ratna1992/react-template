@@ -1,37 +1,34 @@
+// src/pages/Products.tsx
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../redux/store';
-import { setProducts } from '../redux/productsSlice';
-import { Link } from 'react-router-dom';
-import { Button, Typography, List, ListItem } from '@mui/material';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState, AppDispatch } from '../redux/store';
+import { fetchProducts } from '../redux/productsSlice';
 import PaginatedTable from './PaginatedTable';
-import { Container } from '@mui/material';
+import { Link, Container, Typography, List, ListItem, ListItemText } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
 const Products: React.FC = () => {
-  const dispatch = useDispatch();
-  const products = useSelector((state: RootState) => state.products.products);
+  const dispatch = useDispatch<AppDispatch>();
+  const products = useSelector((state: RootState) => state.products.items);
+  const productStatus = useSelector((state: RootState) => state.products.status);
 
   useEffect(() => {
-    // Mock API call to fetch products
-    const fetchProducts = async () => {
-      const response = await fetch('https://dummyjson.com/products'); // Replace with your API endpoint
-      const data = await response.json();
-      dispatch(setProducts(data?.products));
-    };
-
-    fetchProducts();
-  }, [dispatch]);
+    if (productStatus === 'idle') {
+      dispatch(fetchProducts());
+    }
+  }, [productStatus, dispatch]);
 
   return (
-<>
-<Container>
-      <PaginatedTable rows={products} title="Products" />
-      <Button component={Link} to="/offers" variant="contained" color="primary">
+    <div>
+      <PaginatedTable rows={products} title='Products'></PaginatedTable>
+      <Link component={RouterLink} to="/customers" color="primary" underline="hover">
+        Go to Customers
+      </Link>
+      <br />
+      <Link component={RouterLink} to="/offers" color="primary" underline="hover">
         Go to Offers
-      </Button>
-    </Container>
-</>
-    
-   
-)};
+      </Link>
+    </div>
+  );
+};
 
 export default Products;

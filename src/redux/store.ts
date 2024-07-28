@@ -1,14 +1,16 @@
+// src/store.ts
 import { configureStore } from '@reduxjs/toolkit';
-import productsReducer from './productsSlice';
+import productsReducer from './productsSlice'
+import customersReducer from './customersSlice';
+import offersReducer from './offersSlice';
 
-// Define the type for the root state of the Redux store
-export type RootState = ReturnType<typeof store.getState>;
-
-
-const store = configureStore({
+export const store = configureStore({
   reducer: {
-    products: productsReducer
-  }
+    products: productsReducer,
+    customers: customersReducer,
+    offers: offersReducer,
+  },
 });
 
-export default store;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
+import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 // Define the type for a single product
 interface Product {
   id: number;
@@ -9,27 +9,41 @@ interface Product {
 
 // Define the initial state type
 interface ProductsState {
-  products: Product[];
+  items: Product[],
+  status: 'idle' | 'loading' | 'succeeded' | 'failed';
+  error: string | null | any;
+
 }
 
 const initialState: ProductsState = {
-  products: []
+  items: [],
+  status: 'idle',
+  error: null,
 };
 
-// Create the products slice
+export const fetchProducts = createAsyncThunk('products/fetchProducts', async () => {
+  const response = await axios.get('https://dummyjson.com/products');
+  return response.data.products;
+});
+
 const productsSlice = createSlice({
   name: 'products',
   initialState,
-  reducers: {
-    setProducts(state, action: PayloadAction<Product[]>) {
-      state.products = action.payload;
-    },
-    addProduct(state, action: PayloadAction<Product>) {
-      state.products.push(action.payload);
-    }
-  }
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchProducts.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchProducts.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.items = action.payload;
+      })
+      .addCase(fetchProducts.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      });
+  },
 });
-
-export const { setProducts, addProduct } = productsSlice.actions;
 
 export default productsSlice.reducer;
