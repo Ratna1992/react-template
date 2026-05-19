@@ -12,6 +12,7 @@ const App: React.FC = () => {
       <Box component="main" style={{ paddingLeft: '30px' }}>
         <TemplateRoutes />
       </Box>
+      <div></div>
       <Footer />
     </Router>
   );

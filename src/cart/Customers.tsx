@@ -4,7 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '../redux/store';
 import { fetchCustomers } from '../redux/customersSlice';
 import CustomersPaginatedTable from './CustomersPaginatedTable';
-
+import { Link, Container, Typography, List, ListItem, ListItemText } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
 const Customers: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const customers = useSelector((state: RootState) => state.customers.items);
@@ -19,7 +20,18 @@ const Customers: React.FC = () => {
   return (
     <div>
       <CustomersPaginatedTable rows={customers} title='Customers'/>
+
+      
+      <br />
+      <Link component={RouterLink} to="/cart" color="primary" underline="hover">
+        Go to Products
+      </Link>
+      <Link component={RouterLink} to="/offers" color="primary" underline="hover">
+        Go to Offers
+      </Link>
+      <br/>
     </div>
+
   );
 };
 

@@ -20,6 +20,7 @@ const Products: React.FC = () => {
   return (
     <div>
       <PaginatedTable rows={products} title='Products'></PaginatedTable>
+      <br/>
       <Link component={RouterLink} to="/customers" color="primary" underline="hover">
         Go to Customers
       </Link>
@@ -27,6 +28,7 @@ const Products: React.FC = () => {
       <Link component={RouterLink} to="/offers" color="primary" underline="hover">
         Go to Offers
       </Link>
+      <br/>
     </div>
   );
 };

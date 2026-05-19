@@ -6,6 +6,7 @@ import Forms from '../components/Forms';
 import Api from '../components/Api';
 import Products from '../cart/Products';
 import Offers from '../cart/Offer';
+import Customers from '../cart/Customers';
 export default function TemplateRoutes() {
 
     return (
@@ -19,6 +20,7 @@ export default function TemplateRoutes() {
             <Route path="/api" element={<Api />} />
             <Route path ="/cart" element={<Products/>}/>
             <Route path = "/offers" element={<Offers />} />
+            <Route path ="/customers" element={<Customers/>}/>
         </Routes>
 
     )
